@@ -1,34 +1,23 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 [CreateAssetMenu(
-    fileName = "GroundedState",
-    menuName = "StateSystem/Jump/States/GroundedState"
+    fileName = "State_Grounded",
+    menuName = "StateSystem/Jump/States/Grounded"
 )]
-public class GroundedState : ScriptableObject, IState<PawnJumpContext>
+public class GroundedState : State<PawnJumpContext>
 {
-    public void OnEnterState(PawnJumpContext context)
+    public override void OnEnterState(PawnJumpContext context)
     {
-        context.JumpCooldownTimer = 0;
-        context.CoyoteTimer = context.CoyoteTime;
+        context.JumpCooldownTimer = context.JumpStyle.JumpCooldown;
+        context.CoyoteTimer = context.JumpStyle.CoyoteTime;
     }
 
-    public void OnExitState(PawnJumpContext context)
-    {
-        /* ... */
-    }
+    public override void OnExitState(PawnJumpContext context) { }
 
-    public void OnUpdate(PawnJumpContext context)
-    {
-        /* ... */
-    }
+    public override void OnUpdate(PawnJumpContext context) { }
 
-    public void OnLateUpdate(PawnJumpContext context)
-    {
-        /* ... */
-    }
+    public override void OnLateUpdate(PawnJumpContext context) { }
 
-    public void OnFixedUpdate(PawnJumpContext context)
-    {
-        /* ... */
-    }
+    public override void OnFixedUpdate(PawnJumpContext context) { }
 }

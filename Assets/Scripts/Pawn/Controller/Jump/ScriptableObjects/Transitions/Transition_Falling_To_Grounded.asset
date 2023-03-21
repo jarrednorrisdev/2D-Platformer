@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c02c5462174a32a6ddb780d31600bc, type: 3}
+  m_Name: Transition_Falling_To_Grounded
+  m_EditorClassIdentifier: 
+  FromState: {fileID: 11400000, guid: faed89da642ad464bbec9ffa23373c4c, type: 2}
+  ToState: {fileID: 11400000, guid: f811eef2e86a44446b79662cdc538d87, type: 2}
+  conditionGroups:
+  - logic: 0
+    conditions:
+    - {fileID: 11400000, guid: 9b1805bca615fb64696d515443e8eaec, type: 2}

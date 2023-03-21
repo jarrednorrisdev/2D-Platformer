@@ -6,12 +6,12 @@ using UnityEngine;
 public class StateMachineController<T>
 {
     [field: SerializeField]
-    IState<T> InitialState { get; set; }
+    State<T> InitialState { get; set; }
 
     [field: SerializeField]
     public List<StateTransition<T>> Transitions { get; set; }
 
-    IState<T> CurrentState { get; set; }
+    State<T> CurrentState { get; set; }
 
     public void Initialize(T context)
     {
@@ -46,9 +46,19 @@ public class StateMachineController<T>
         CurrentState.OnLateUpdate(context);
     }
 
-    public void SetState(T context, IState<T> newState)
+    public void SetState(T context, State<T> newState)
     {
-        CurrentState?.OnExitState(context);
+        if (CurrentState != null)
+        {
+            Debug.Log(
+                $"Transitioning From {CurrentState.name} to {newState.name}"
+            );
+            CurrentState.OnExitState(context);
+        }
+        else
+        {
+            Debug.Log($"Transitioning From NO STATE to {newState.name}");
+        }
         CurrentState = newState;
         CurrentState.OnEnterState(context);
     }

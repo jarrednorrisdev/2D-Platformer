@@ -13,7 +13,11 @@ public class PawnController2D : MonoBehaviour
 
     [field: SerializeField]
     [field: ShowIf("usePlayerInput")]
-    public PlayerPawnControllerInput ControllerInput { get; }
+    public PlayerPawnControllerInput ControllerInput
+    {
+        get;
+        private set;
+    }
 
     [HideIf("usePlayerInput")]
     [SerializeField]
@@ -29,8 +33,6 @@ public class PawnController2D : MonoBehaviour
     [SerializeField]
     PawnJump pawnJump;
 
-    
-
     [SerializeField]
     Rigidbody2D _rb;
 
@@ -42,25 +44,24 @@ public class PawnController2D : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        pawnJump = GetComponent<PawnJump>();
 
         if (usePlayerInput && ControllerInput != null)
         {
             _input = ControllerInput;
         }
-        
+
         pawnJump.Initialize();
     }
 
     void Update()
     {
-        
-        //jump.UpdateGroundCheck();
-        //jump.HandleJumpInput(_input.JumpPerformed, _input.JumpReleased);
+        pawnJump.OnUpdate();
     }
 
     void FixedUpdate()
     {
         movement.Move(_input.Move);
-        //jump.Jump();
+        pawnJump.OnFixedUpdate();
     }
 }

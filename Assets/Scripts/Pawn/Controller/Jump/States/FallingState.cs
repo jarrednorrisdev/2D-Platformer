@@ -1,26 +1,25 @@
-﻿using UnityEngine;
+﻿using Sirenix.OdinInspector;
+using UnityEngine;
 
 [CreateAssetMenu(
-    fileName = "FallingState",
-    menuName = "StateSystem/Jump/States/FallingState"
+    fileName = "State_Falling",
+    menuName = "StateSystem/Jump/States/Falling"
 )]
-public class FallingState : ScriptableObject, IState<PawnJumpContext>
+public class FallingState : State<PawnJumpContext>
 {
-    public void OnEnterState(PawnJumpContext pawnJump)
+    public override void OnEnterState(PawnJumpContext context)
     {
-        pawnJump.JumpCooldown = 0;
-        pawnJump.Rb.velocity = new Vector2(pawnJump.Rb.velocity.x, 0);
+        //context.Rb.velocity = new Vector2(context.Rb.velocity.x, 0);
     }
 
-    public void OnExitState(PawnJumpContext pawnJump) { /* ... */
+    public override void OnExitState(PawnJumpContext context) { }
+
+    public override void OnUpdate(PawnJumpContext context)
+    {
+        context.JumpCooldownTimer -= Time.deltaTime;
     }
 
-    public void OnUpdate(PawnJumpContext pawnJump) { /* ... */
-    }
+    public override void OnLateUpdate(PawnJumpContext context) { }
 
-    public void OnLateUpdate(PawnJumpContext pawnJump) { /* ... */
-    }
-
-    public void OnFixedUpdate(PawnJumpContext pawnJump) { /* ... */
-    }
+    public override void OnFixedUpdate(PawnJumpContext context) { }
 }

@@ -15,9 +15,11 @@ GameObject:
   - component: {fileID: 7727072876368255109}
   - component: {fileID: 3001501976819813468}
   - component: {fileID: 3391447706271604920}
+  - component: {fileID: 3847300115771390332}
+  - component: {fileID: 1578528347367712162}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2079595462821682907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.22, y: -9.78, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 557141282184419684}
@@ -80,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.252759, g: 0.3384592, b: 0.754717, a: 1}
+  m_Color: {r: 1, g: 0.8382193, b: 0.6084906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,7 +107,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -113,9 +115,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7080907321293447118
 BoxCollider2D:
@@ -176,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 95e0ec429ebc4064388e102b102d371c, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -206,22 +208,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usePlayerInput: 1
-  playerControllerInput: {fileID: 3391447706271604920}
+  <ControllerInput>k__BackingField: {fileID: 3391447706271604920}
+  pawnControllerInput: {fileID: 0}
   movement:
     speed: 5
     rb: {fileID: 7262879588531549641}
-  jump:
-    initialJumpForce: 5
-    maxJumpForce: 10
-    jumpForceIncreaseSpeed: 3
-    groundLayer:
-      serializedVersion: 2
-      m_Bits: 64
-    groundCheck: {fileID: 557141282184419684}
-    groundCheckRadius: 0.1
-    jumpCooldown: 1
-    coyoteTime: 0.2
-    _rb: {fileID: 7262879588531549641}
+  pawnJump: {fileID: 3847300115771390332}
+  _rb: {fileID: 7262879588531549641}
 --- !u!114 &3391447706271604920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +255,48 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &3847300115771390332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079595462821682907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24b2b3c86794b09bdb5b991075d5ab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Context>k__BackingField:
+    <ParentController>k__BackingField: {fileID: 3001501976819813468}
+    <Collider>k__BackingField: {fileID: 7080907321293447118}
+    <GroundLayer>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 64
+    <JumpStyle>k__BackingField: {fileID: 11400000, guid: a33ee01ee1012714caf3588c9d994fe0, type: 2}
+    Rb: {fileID: 7262879588531549641}
+  <JumpStateMachine>k__BackingField:
+    <InitialState>k__BackingField: {fileID: 11400000, guid: faed89da642ad464bbec9ffa23373c4c, type: 2}
+    <Transitions>k__BackingField:
+    - {fileID: 11400000, guid: d77babfbc0f64124eb0308b86b3fd757, type: 2}
+    - {fileID: 11400000, guid: a0db1efb58e67874dbce0799a00eb206, type: 2}
+    - {fileID: 11400000, guid: 97d32bdfab80fb24da6dbeaa4efeab06, type: 2}
+    - {fileID: 11400000, guid: 3a2e33409f938ae4498ab827a26ff1ad, type: 2}
+    - {fileID: 11400000, guid: 8d9d42e4fd9e8c447b587ec276a6c9c7, type: 2}
+--- !u!114 &1578528347367712162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079595462821682907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6bc817dbc949b2a54a6b14a290529d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftTrigger: {fileID: 0}
+  rightTrigger: {fileID: 0}
 --- !u!1 &5496026635922563683
 GameObject:
   m_ObjectHideFlags: 0
