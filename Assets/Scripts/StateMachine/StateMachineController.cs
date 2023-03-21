@@ -11,6 +11,9 @@ public class StateMachineController<T>
     [field: SerializeField]
     public List<StateTransition<T>> Transitions { get; set; }
 
+    [field: SerializeField]
+    bool LogTransitions { get; set; }
+
     State<T> CurrentState { get; set; }
 
     public void Initialize(T context)
@@ -50,14 +53,20 @@ public class StateMachineController<T>
     {
         if (CurrentState != null)
         {
-            Debug.Log(
-                $"Transitioning From {CurrentState.name} to {newState.name}"
-            );
+            if (LogTransitions)
+            {
+                Debug.Log(
+                    $"Transitioning From {CurrentState.name} to {newState.name}"
+                );
+            }
             CurrentState.OnExitState(context);
         }
         else
         {
-            Debug.Log($"Transitioning From NO STATE to {newState.name}");
+            if (LogTransitions)
+            {
+                Debug.Log($"Transitioning From NO STATE to {newState.name}");
+            }
         }
         CurrentState = newState;
         CurrentState.OnEnterState(context);

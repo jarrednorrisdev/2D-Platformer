@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51effdcff8c2438a8b94ff0eff51ccc3, type: 3}
-  m_Name: State_Dashed
+  m_Name: State_Dashing
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2

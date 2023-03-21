@@ -296,6 +296,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3a2e33409f938ae4498ab827a26ff1ad, type: 2}
     - {fileID: 11400000, guid: 8d9d42e4fd9e8c447b587ec276a6c9c7, type: 2}
     - {fileID: 11400000, guid: ab332fd8d123cdb4e83831c3ce3bc589, type: 2}
+    <LogTransitions>k__BackingField: 0
 --- !u!114 &5596392234376212463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,8 +316,11 @@ MonoBehaviour:
   <DashStateMachine>k__BackingField:
     <InitialState>k__BackingField: {fileID: 11400000, guid: 29ab35167ddba9445ad95e51e027512d, type: 2}
     <Transitions>k__BackingField:
-    - {fileID: 11400000, guid: 9b34ad7bc35160843a46ee261a8d31c6, type: 2}
+    - {fileID: 11400000, guid: 547f4d12203e8dd44834e739ac437f28, type: 2}
+    - {fileID: 11400000, guid: 4b0ed285e54fc274e9015865ac0dd71e, type: 2}
     - {fileID: 11400000, guid: a5d093414ff693f46b0cd092eb44f907, type: 2}
+    - {fileID: 11400000, guid: 072476f9fab4bd74aa5a562b30685efa, type: 2}
+    <LogTransitions>k__BackingField: 1
 --- !u!1 &5496026635922563683
 GameObject:
   m_ObjectHideFlags: 0

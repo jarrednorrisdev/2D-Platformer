@@ -10,12 +10,4 @@ public class IsDashCooldownActive : TransitionCondition<PawnDashContext>
     {
         return context.DashCooldownTimer > 0;
     }
-
-    public IsDashCooldownActive()
-    {
-        ConditionDisplayString =
-            @"
-                return context.DashCooldownTimer > 0;
-            ";
-    }
 }

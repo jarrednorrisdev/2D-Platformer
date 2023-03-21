@@ -10,9 +10,4 @@ public class IsJumpCooldownActive : TransitionCondition<PawnJumpContext>
     {
         return context.JumpCooldownTimer > 0;
     }
-
-    public IsJumpCooldownActive()
-    {
-        ConditionDisplayString = @"return context.JumpCooldownTimer > 0;";
-    }
 }

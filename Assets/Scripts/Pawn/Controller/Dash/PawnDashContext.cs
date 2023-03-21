@@ -19,4 +19,5 @@ public class PawnDashContext
     public Rigidbody2D Rb;
 
     public float DashCooldownTimer { get; set; }
+    public float DashDurationTimer { get; set; }
 }

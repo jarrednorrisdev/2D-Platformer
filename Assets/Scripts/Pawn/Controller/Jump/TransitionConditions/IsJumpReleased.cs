@@ -10,10 +10,4 @@ public class IsJumpReleased : TransitionCondition<PawnJumpContext>
     {
         return context.ParentController.ControllerInput.JumpReleased;
     }
-
-    public IsJumpReleased()
-    {
-        ConditionDisplayString =
-            @"return context.ParentController.ControllerInput.JumpReleased;";
-    }
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21ffa01f28384f408eef5515804ad70a, type: 3}
-  m_Name: Transition_DashReady_to_Dashed
+  m_Name: Transition_Dashing_to_DashOnCooldown
   m_EditorClassIdentifier: 
-  FromState: {fileID: 11400000, guid: 29ab35167ddba9445ad95e51e027512d, type: 2}
-  ToState: {fileID: 11400000, guid: ea07a0ff912adf34da223218d2527eb7, type: 2}
+  FromState: {fileID: 11400000, guid: ea07a0ff912adf34da223218d2527eb7, type: 2}
+  ToState: {fileID: 11400000, guid: 739a40793870a0a48bf47de8b01ad91b, type: 2}
   conditionGroups:
   - logic: 0
     conditions:
-    - {fileID: 11400000, guid: 92b74709aa9b6a942b58e25e17ee1bf8, type: 2}
-  enableLogging: 0
+    - {fileID: 11400000, guid: f88adf2702f027f419167fa27a77db4a, type: 2}
+  enableLogging: 1

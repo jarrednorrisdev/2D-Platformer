@@ -10,9 +10,4 @@ public class IsJumpApexReached : TransitionCondition<PawnJumpContext>
     {
         return context.Rb.velocity.y <= 0;
     }
-
-    public IsJumpApexReached()
-    {
-        ConditionDisplayString = @"return context.Rb.velocity.y <= 0;";
-    }
 }

@@ -34,16 +34,4 @@ public abstract class TransitionCondition<T> : ScriptableObject
 
     // Implement this method in derived classes to provide the actual condition evaluation logic.
     protected abstract bool EvaluateCondition(T context);
-
-    [InfoBox(
-        "This is merely a copy paste of the code for quick reference. "
-            + "If something is not as expected, "
-            + "double check the actual implementation matches "
-            + "the code displayed here"
-    )]
-    [TextArea(4, 20)]
-    [SerializeField]
-    [ReadOnly]
-    protected string ConditionDisplayString =
-        "Lazy coder didnt copy the code for you";
 }

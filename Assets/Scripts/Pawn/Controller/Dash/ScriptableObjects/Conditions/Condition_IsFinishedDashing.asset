@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4c8d28ea1e4461a4d31091655469ff, type: 3}
-  m_Name: DashStyle_Player
+  m_Script: {fileID: 11500000, guid: cf4627c8d209437d8b6b6538b2588c45, type: 3}
+  m_Name: Condition_IsFinishedDashing
   m_EditorClassIdentifier: 
-  <DashCooldown>k__BackingField: 1
-  <InitialDashForce>k__BackingField: 5
-  <DashDeceleration>k__BackingField: 50
-  <DashDecayRate>k__BackingField: 5
-  <DashDuration>k__BackingField: 0.5
+  negate: 1
+  enableLogging: 0
+  ConditionDisplayString: "\r\n                return context.DashElapsedTimer >=
+    context.DashStyle.DashDuration;\r\n            "

@@ -10,9 +10,4 @@ public class IsCoyoteTimeActive : TransitionCondition<PawnJumpContext>
     {
         return context.CoyoteTimer > 0;
     }
-
-    public IsCoyoteTimeActive()
-    {
-        ConditionDisplayString = @"return context.CoyoteTimer > 0;";
-    }
 }

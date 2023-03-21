@@ -10,10 +10,4 @@ public class IsJumpPerformed : TransitionCondition<PawnJumpContext>
     {
         return context.ParentController.ControllerInput.JumpPerformed;
     }
-
-    public IsJumpPerformed()
-    {
-        ConditionDisplayString =
-            @"return context.ParentController.ControllerInput.JumpPerformed;";
-    }
 }

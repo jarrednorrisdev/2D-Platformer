@@ -28,11 +28,6 @@ public class PawnDash : MonoBehaviour, IStateMachineUser<PawnDashContext>
     public void OnFixedUpdate()
     {
         DashStateMachine.OnFixedUpdate(Context);
-        Context.Rb.velocityX = Mathf.MoveTowards(
-            Context.Rb.velocityX,
-            0,
-            Context.DashStyle.DashDecayRate
-        );
     }
 
     public void OnLateUpdate()

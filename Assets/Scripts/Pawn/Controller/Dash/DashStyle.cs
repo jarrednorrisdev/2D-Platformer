@@ -10,5 +10,12 @@ public class DashStyle : ScriptableObject
     public float InitialDashForce { get; private set; } = 5.0f;
 
     [field: SerializeField]
+    public float DashDeceleration { get; private set; } = 2.0f;
+    
+    [field: SerializeField]
     public float DashDecayRate { get; private set; } = 2.0f;
+    
+    [field: SerializeField]
+    public float DashDuration { get; private set; } = 2.0f;
+    
 }

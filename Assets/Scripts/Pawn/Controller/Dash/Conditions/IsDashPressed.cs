@@ -10,12 +10,4 @@ public class IsDashPressed : TransitionCondition<PawnDashContext>
     {
         return context.ParentController.ControllerInput.Dash;
     }
-
-    public IsDashPressed()
-    {
-        ConditionDisplayString =
-            @"
-                return context.ParentController.ControllerInput.Dash;
-            ";
-    }
 }

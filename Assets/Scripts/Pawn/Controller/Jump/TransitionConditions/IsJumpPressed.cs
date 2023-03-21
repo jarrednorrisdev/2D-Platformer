@@ -10,10 +10,4 @@ public class IsJumpPressed : TransitionCondition<PawnJumpContext>
     {
         return context.ParentController.ControllerInput.JumpPressed;
     }
-
-    public IsJumpPressed()
-    {
-        ConditionDisplayString =
-            @"return context.ParentController.ControllerInput.JumpPressed;";
-    }
 }
