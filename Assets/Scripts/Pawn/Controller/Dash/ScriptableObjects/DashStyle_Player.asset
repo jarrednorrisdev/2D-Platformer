@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DashStyle_Player
   m_EditorClassIdentifier: 
   <DashCooldown>k__BackingField: 0.1
-  <InitialDashForce>k__BackingField: 20
+  <InitialDashForce>k__BackingField: 50
   <DashDeceleration>k__BackingField: 100
   <DashDecayRate>k__BackingField: 5
   <DashDuration>k__BackingField: 0.3

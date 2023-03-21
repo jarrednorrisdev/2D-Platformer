@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: JumpStyle_Player
   m_EditorClassIdentifier: 
   <JumpCooldown>k__BackingField: 0.1
-  <CoyoteTime>k__BackingField: 0.2
-  <InitialJumpForce>k__BackingField: 20
-  <MaxJumpForce>k__BackingField: 80
-  <JumpForceIncreaseSpeed>k__BackingField: 65
+  <CoyoteTime>k__BackingField: 0.15
+  <InitialJumpForce>k__BackingField: 16
+  <MaxJumpForce>k__BackingField: 20
+  <JumpForceIncreaseSpeed>k__BackingField: 70
