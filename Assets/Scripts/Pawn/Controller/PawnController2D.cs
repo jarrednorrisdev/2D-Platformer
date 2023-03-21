@@ -24,7 +24,7 @@ public class PawnController2D : MonoBehaviour
 
 
     [SerializeField]
-    PawnMovement movement;
+    PawnMovement pawnMovement;
 
     [SerializeField]
     PawnJump pawnJump;
@@ -49,6 +49,7 @@ public class PawnController2D : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        pawnMovement = GetComponent<PawnMovement>();
         pawnJump = GetComponent<PawnJump>();
         pawnDash = GetComponent<PawnDash>();
 
@@ -63,13 +64,14 @@ public class PawnController2D : MonoBehaviour
 
     void Update()
     {
+        pawnMovement.OnUpdate();
         pawnJump.OnUpdate();
         pawnDash.OnUpdate();
     }
 
     void FixedUpdate()
     {
-        movement.Move(_input.Move);
+        pawnMovement.OnFixedUpdate();
         pawnJump.OnFixedUpdate();
         pawnDash.OnFixedUpdate();
         _rb.velocityY = Mathf.Clamp(

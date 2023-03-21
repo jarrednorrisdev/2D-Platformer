@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4c8d28ea1e4461a4d31091655469ff, type: 3}
-  m_Name: DashStyle_Player
+  m_Script: {fileID: 11500000, guid: e99f9aa12bee4a72b4223231c45009b9, type: 3}
+  m_Name: MoveStyle_Player
   m_EditorClassIdentifier: 
-  <DashCooldown>k__BackingField: 0.1
-  <InitialDashForce>k__BackingField: 20
-  <DashDeceleration>k__BackingField: 100
-  <DashDecayRate>k__BackingField: 5
-  <DashDuration>k__BackingField: 0.3
+  <Speed>k__BackingField: 10
+  <Acceleration>k__BackingField: 150
+  <MaxSpeed>k__BackingField: 15
+  <Deceleration>k__BackingField: 10
