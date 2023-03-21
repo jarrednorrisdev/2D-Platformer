@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21ffa01f28384f408eef5515804ad70a, type: 3}
+  m_Name: Transition_Dashed_to_DashReady
+  m_EditorClassIdentifier: 
+  FromState: {fileID: 11400000, guid: ea07a0ff912adf34da223218d2527eb7, type: 2}
+  ToState: {fileID: 11400000, guid: 29ab35167ddba9445ad95e51e027512d, type: 2}
+  conditionGroups:
+  - logic: 0
+    conditions:
+    - {fileID: 11400000, guid: 1456658b1e7ec6b41a7154cb1ac1213c, type: 2}
+  enableLogging: 0

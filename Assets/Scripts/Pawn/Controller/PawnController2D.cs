@@ -13,11 +13,7 @@ public class PawnController2D : MonoBehaviour
 
     [field: SerializeField]
     [field: ShowIf("usePlayerInput")]
-    public PlayerPawnControllerInput ControllerInput
-    {
-        get;
-        private set;
-    }
+    public PlayerPawnControllerInput ControllerInput { get; private set; }
 
     [HideIf("usePlayerInput")]
     [SerializeField]
@@ -34,7 +30,16 @@ public class PawnController2D : MonoBehaviour
     PawnJump pawnJump;
 
     [SerializeField]
+    PawnDash pawnDash;
+
+    [SerializeField]
     Rigidbody2D _rb;
+
+    [SerializeField]
+    float _maxFallSpeed = 50f;
+
+    [SerializeField]
+    float _maxRiseSpeed = 50f;
 
     public PawnController2D(PlayerPawnControllerInput controllerInput)
     {
@@ -45,6 +50,7 @@ public class PawnController2D : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         pawnJump = GetComponent<PawnJump>();
+        pawnDash = GetComponent<PawnDash>();
 
         if (usePlayerInput && ControllerInput != null)
         {
@@ -52,16 +58,24 @@ public class PawnController2D : MonoBehaviour
         }
 
         pawnJump.Initialize();
+        pawnDash.Initialize();
     }
 
     void Update()
     {
         pawnJump.OnUpdate();
+        pawnDash.OnUpdate();
     }
 
     void FixedUpdate()
     {
         movement.Move(_input.Move);
         pawnJump.OnFixedUpdate();
+        pawnDash.OnFixedUpdate();
+        _rb.velocityY = Mathf.Clamp(
+            _rb.velocityY,
+            -_maxFallSpeed,
+            _maxRiseSpeed
+        );
     }
 }

@@ -8,6 +8,8 @@ public class JumpingState : State<PawnJumpContext>
 {
     public override void OnEnterState(PawnJumpContext context)
     {
+        context.JumpCooldownTimer = context.JumpStyle.JumpCooldown;
+        context.Rb.velocityY = 0;
         context.Rb.AddForce(
             Vector2.up * context.JumpStyle.InitialJumpForce,
             ForceMode2D.Impulse
@@ -16,7 +18,11 @@ public class JumpingState : State<PawnJumpContext>
 
     public override void OnExitState(PawnJumpContext context) { }
 
-    public override void OnUpdate(PawnJumpContext context) { }
+    public override void OnUpdate(PawnJumpContext context)
+    {
+        context.CoyoteTimer -= Time.deltaTime;
+        context.JumpCooldownTimer -= Time.deltaTime;
+    }
 
     public override void OnLateUpdate(PawnJumpContext context) { }
 
@@ -29,10 +35,11 @@ public class JumpingState : State<PawnJumpContext>
             ForceMode2D.Impulse
         );
 
+        Vector2 velocity = context.Rb.velocity;
         context.Rb.velocity = new Vector2(
-            context.Rb.velocity.x,
+            velocity.x,
             Mathf.Clamp(
-                context.Rb.velocity.y,
+                velocity.y,
                 0,
                 context.JumpStyle.MaxJumpForce
             )

@@ -18,3 +18,4 @@ MonoBehaviour:
   - logic: 0
     conditions:
     - {fileID: 11400000, guid: 9b75c7427cc9fbd418ed3d79be81b6f6, type: 2}
+    - {fileID: 11400000, guid: 4419037c07f3b7344becd1119b820daa, type: 2}

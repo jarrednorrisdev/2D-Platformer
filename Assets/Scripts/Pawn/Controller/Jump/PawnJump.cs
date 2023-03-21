@@ -2,9 +2,8 @@
 using UnityEngine;
 
 [System.Serializable]
-public class PawnJump
-    : MonoBehaviour,
-        IStateMachineUser<PawnJumpContext>
+[RequireComponent(typeof(PawnController2D))]
+public class PawnJump : MonoBehaviour, IStateMachineUser<PawnJumpContext>
 {
     [field: SerializeField]
     public PawnJumpContext Context { get; private set; }

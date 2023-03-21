@@ -17,6 +17,7 @@ public class FallingState : State<PawnJumpContext>
     public override void OnUpdate(PawnJumpContext context)
     {
         context.JumpCooldownTimer -= Time.deltaTime;
+        context.CoyoteTimer -= Time.deltaTime;
     }
 
     public override void OnLateUpdate(PawnJumpContext context) { }

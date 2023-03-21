@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5312693050c54f24a543e40f327a9b3a, type: 3}
   m_Name: Condition_IsJumpPressed
   m_EditorClassIdentifier: 
+  negate: 0
+  enableLogging: 0
+  ConditionDisplayString: return context.ParentController.ControllerInput.JumpPressed;

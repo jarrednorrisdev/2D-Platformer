@@ -16,12 +16,23 @@ public class StateTransition<T> : ScriptableObject
     [SerializeField]
     List<TransitionConditionGroup<T>> conditionGroups;
 
+    [SerializeField]
+    [Tooltip(
+        "Log info on the evaluation of the condition groups linked to this state"
+    )]
+    bool enableLogging;
+
     // Evaluates if the transition should occur based on the conditions.
     public bool ShouldTransition(T context)
     {
-        return conditionGroups.Any(
+        bool result = conditionGroups.Any(
             conditionGroup => conditionGroup.Evaluate(context)
         );
+        if (enableLogging)
+        {
+            Debug.Log($"[{name}] +conditionGroup evaluated to [{result}]");
+        }
+        return result;
     }
 
     // Represents a group of transition conditions.
@@ -43,9 +54,16 @@ public class StateTransition<T> : ScriptableObject
         {
             return logic switch
             {
-                ConditionLogic.AND => conditions.TrueForAll(condition => condition.Evaluate(context)),
-                ConditionLogic.OR => conditions.Any(condition => condition.Evaluate(context)),
-                ConditionLogic.XOR => conditions.Count(condition => condition.Evaluate(context)) == 1,
+                ConditionLogic.AND
+                    => conditions.TrueForAll(
+                        condition => condition.Evaluate(context)
+                    ),
+                ConditionLogic.OR
+                    => conditions.Any(condition => condition.Evaluate(context)),
+                ConditionLogic.XOR
+                    => conditions.Count(
+                        condition => condition.Evaluate(context)
+                    ) == 1,
                 _ => false
             };
         }

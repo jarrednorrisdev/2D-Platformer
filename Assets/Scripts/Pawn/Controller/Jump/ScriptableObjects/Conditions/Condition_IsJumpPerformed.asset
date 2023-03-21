@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Condition_IsJumpPerformed
   m_EditorClassIdentifier: 
   negate: 0
+  enableLogging: 0
   ConditionDisplayString: return context.ParentController.ControllerInput.JumpPerformed;

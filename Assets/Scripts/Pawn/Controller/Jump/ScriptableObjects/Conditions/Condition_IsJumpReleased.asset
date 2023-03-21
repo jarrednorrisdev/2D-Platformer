@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d904aa5e374cdda16c3f1ee43543cd, type: 3}
   m_Name: Condition_IsJumpReleased
   m_EditorClassIdentifier: 
+  negate: 0
+  enableLogging: 0
+  ConditionDisplayString: return context.ParentController.ControllerInput.JumpReleased;

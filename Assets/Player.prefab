@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3001501976819813468}
   - component: {fileID: 3391447706271604920}
   - component: {fileID: 3847300115771390332}
-  - component: {fileID: 1578528347367712162}
+  - component: {fileID: 5596392234376212463}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -214,7 +214,10 @@ MonoBehaviour:
     speed: 5
     rb: {fileID: 7262879588531549641}
   pawnJump: {fileID: 3847300115771390332}
+  pawnDash: {fileID: 5596392234376212463}
   _rb: {fileID: 7262879588531549641}
+  _maxFallSpeed: 50
+  _maxRiseSpeed: 50
 --- !u!114 &3391447706271604920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +258,15 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  <DashAction>k__BackingField:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bf7a96d2-225d-4399-8523-d0379da24147
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!114 &3847300115771390332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +295,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 97d32bdfab80fb24da6dbeaa4efeab06, type: 2}
     - {fileID: 11400000, guid: 3a2e33409f938ae4498ab827a26ff1ad, type: 2}
     - {fileID: 11400000, guid: 8d9d42e4fd9e8c447b587ec276a6c9c7, type: 2}
---- !u!114 &1578528347367712162
+    - {fileID: 11400000, guid: ab332fd8d123cdb4e83831c3ce3bc589, type: 2}
+--- !u!114 &5596392234376212463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,11 +305,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2079595462821682907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa6bc817dbc949b2a54a6b14a290529d, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e0a2de4c44f49aa8ff762aa47a69809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftTrigger: {fileID: 0}
-  rightTrigger: {fileID: 0}
+  <Context>k__BackingField:
+    <ParentController>k__BackingField: {fileID: 3001501976819813468}
+    <DashStyle>k__BackingField: {fileID: 11400000, guid: 9593e32f3852ca44bb7d33afa4b5952e, type: 2}
+    Rb: {fileID: 7262879588531549641}
+  <DashStateMachine>k__BackingField:
+    <InitialState>k__BackingField: {fileID: 11400000, guid: 29ab35167ddba9445ad95e51e027512d, type: 2}
+    <Transitions>k__BackingField:
+    - {fileID: 11400000, guid: 9b34ad7bc35160843a46ee261a8d31c6, type: 2}
+    - {fileID: 11400000, guid: a5d093414ff693f46b0cd092eb44f907, type: 2}
 --- !u!1 &5496026635922563683
 GameObject:
   m_ObjectHideFlags: 0

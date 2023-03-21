@@ -5,4 +5,5 @@
     bool JumpReleased { get; }
     bool JumpPerformed { get; }
     bool Interact { get; }
+    bool Dash { get; }
 }
