@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21ffa01f28384f408eef5515804ad70a, type: 3}
-  m_Name: Transition_Dashing_to_DashOnCooldown
+  m_Script: {fileID: 11500000, guid: c0ae3e51a293fdf49b3f66125433197b, type: 3}
+  m_Name: Clinging_to_WallJumping
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,10 +21,10 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  FromState: {fileID: 11400000, guid: ea07a0ff912adf34da223218d2527eb7, type: 2}
-  ToState: {fileID: 11400000, guid: 739a40793870a0a48bf47de8b01ad91b, type: 2}
+  FromState: {fileID: 11400000, guid: 1581bc97248a65f4ea39bc627d2caf3d, type: 2}
+  ToState: {fileID: 11400000, guid: e922b477c7024114c9c68823a31e2081, type: 2}
   conditionGroups:
   - logic: 0
     conditions:
-    - {fileID: 11400000, guid: f88adf2702f027f419167fa27a77db4a, type: 2}
+    - {fileID: 11400000, guid: d90f6f78f1e697049bb325ce5aaf179d, type: 2}
   enableLogging: 0

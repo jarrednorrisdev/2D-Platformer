@@ -550,7 +550,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 0
+  orthographic size: 8.390625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4071,9 +4071,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3001501976819813468, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: pawnWallJump
+      value: 
+      objectReference: {fileID: 8630926479112832053}
+    - target: {fileID: 3001501976819813468, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: <BoxRaycaster>k__BackingField.<Collider>k__BackingField
+      value: 
+      objectReference: {fileID: 8630926479112832045}
+    - target: {fileID: 3001501976819813468, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: <BoxRaycaster>k__BackingField.<CollisionMask>k__BackingField.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4115,6 +4135,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5596392234376212463, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      propertyPath: <DashStateMachine>k__BackingField.<LogTransitions>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7727072876368255109, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4143,6 +4167,16 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2079595462821682907, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
   m_PrefabInstance: {fileID: 8630926479112832042}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &8630926479112832045 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7080907321293447118, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+  m_PrefabInstance: {fileID: 8630926479112832042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &8630926479112832046 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7262879588531549641, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+  m_PrefabInstance: {fileID: 8630926479112832042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8630926479112832052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
@@ -4164,11 +4198,15 @@ MonoBehaviour:
     <ParentController>k__BackingField: {fileID: 8630926479112832043}
     <CollisionMask>k__BackingField:
       serializedVersion: 2
-      m_Bits: 0
-    <WallJumpStyle>k__BackingField: {fileID: 0}
-    <Rb>k__BackingField: {fileID: 0}
-    <Collider>k__BackingField: {fileID: 0}
+      m_Bits: 64
+    <WallJumpStyle>k__BackingField: {fileID: 11400000, guid: a45a4dbc5fe320c49b053ea67f9ca1cf, type: 2}
+    <Rb>k__BackingField: {fileID: 8630926479112832046}
+    <Collider>k__BackingField: {fileID: 8630926479112832045}
   <JumpStateMachine>k__BackingField:
-    <InitialState>k__BackingField: {fileID: 0}
-    <Transitions>k__BackingField: []
-    <LogTransitions>k__BackingField: 0
+    <InitialState>k__BackingField: {fileID: 11400000, guid: c01e01353e145fd46b67d05cd3157bfa, type: 2}
+    <Transitions>k__BackingField:
+    - {fileID: 11400000, guid: eb68bed605b3a8d43a9fea7af272b4e5, type: 2}
+    - {fileID: 11400000, guid: 567d4302f6fdb784189932b556177b0e, type: 2}
+    - {fileID: 11400000, guid: 1c973d7b36f7ab645893c49b3bf46946, type: 2}
+    - {fileID: 11400000, guid: 3185cf3dbbc8b63499d839a7602c6076, type: 2}
+    <LogTransitions>k__BackingField: 1

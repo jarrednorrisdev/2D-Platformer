@@ -1,6 +1,7 @@
 ﻿using Pawn.Controller2D.Dash;
 using Pawn.Controller2D.Jump;
 using Pawn.Controller2D.Move;
+using Pawn.Controller2D.WallJump;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Utilities;
@@ -34,6 +35,9 @@ namespace Pawn.Controller2D
         PawnJump pawnJump;
 
         [SerializeField]
+        PawnWallJump pawnWallJump;
+
+        [SerializeField]
         PawnDash pawnDash;
 
         [field: SerializeField]
@@ -59,6 +63,7 @@ namespace Pawn.Controller2D
             pawnMovement = GetComponent<PawnMovement>();
             pawnJump = GetComponent<PawnJump>();
             pawnDash = GetComponent<PawnDash>();
+            pawnWallJump = GetComponent<PawnWallJump>();
 
             if (usePlayerInput && ControllerInput != null)
             {
@@ -67,6 +72,7 @@ namespace Pawn.Controller2D
 
             pawnJump.Initialize();
             pawnDash.Initialize();
+            pawnWallJump.Initialize();
         }
 
         void Update()
@@ -74,6 +80,7 @@ namespace Pawn.Controller2D
             pawnMovement.OnUpdate();
             pawnJump.OnUpdate();
             pawnDash.OnUpdate();
+            pawnWallJump.OnUpdate();
         }
 
         void FixedUpdate()
@@ -82,6 +89,7 @@ namespace Pawn.Controller2D
             pawnMovement.OnFixedUpdate();
             pawnJump.OnFixedUpdate();
             pawnDash.OnFixedUpdate();
+            pawnWallJump.OnFixedUpdate();
             _rb.velocityY = Mathf.Clamp(_rb.velocityY, -_maxFallSpeed, _maxRiseSpeed);
         }
     }
