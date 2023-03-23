@@ -1,0 +1,15 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "_State", menuName = "StateSystem/_/States/_")]
+public class #SCRIPTNAME# : State<_Context>
+{
+    public override void OnEnterState(_Context context) { }
+#NOTRIM#
+    public override void OnExitState(_Context context) { }
+#NOTRIM#
+    public override void OnUpdate(_Context context) { }
+#NOTRIM#
+    public override void OnLateUpdate(_Context context) { }
+#NOTRIM#
+    public override void OnFixedUpdate(_Context context) { }
+}

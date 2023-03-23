@@ -1,8 +1,11 @@
-﻿public interface IStateMachineUser<out T>
+﻿namespace StateMachine
 {
-    public T Context { get; }
-    public void Initialize();
-    public void OnUpdate();
-    public void OnFixedUpdate();
-    public void OnLateUpdate();
+    public interface IStateMachineUser<out T>
+    {
+        public T Context { get; }
+        public void Initialize();
+        public void OnUpdate();
+        public void OnFixedUpdate();
+        public void OnLateUpdate();
+    }
 }

@@ -1,13 +1,23 @@
-﻿using UnityEngine;
+﻿using Pawn.Controller2D;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerPawnControllerInput : MonoBehaviour, IPawnControllerInput
 {
-    [field: SerializeField] public PlayerInput PlayerInput { get; private set; }
-    [field: SerializeField] public InputAction MoveAction { get; private set; }
-    [field: SerializeField] public InputAction JumpAction { get; private set; }
-    [field: SerializeField] public InputAction InteractAction { get; private set; }
-    [field: SerializeField] public InputAction DashAction { get; private set; }
+    [field: SerializeField]
+    public PlayerInput PlayerInput { get; private set; }
+
+    [field: SerializeField]
+    public InputAction MoveAction { get; private set; }
+
+    [field: SerializeField]
+    public InputAction JumpAction { get; private set; }
+
+    [field: SerializeField]
+    public InputAction InteractAction { get; private set; }
+
+    [field: SerializeField]
+    public InputAction DashAction { get; private set; }
 
     void OnEnable()
     {
@@ -21,7 +31,10 @@ public class PlayerPawnControllerInput : MonoBehaviour, IPawnControllerInput
         InteractAction.Enable();
         DashAction.Enable();
 
-        JumpAction.started += context => { Debug.Log("JumpAction Started"); };
+        JumpAction.started += context =>
+        {
+            Debug.Log("JumpAction Started");
+        };
     }
 
     void OnDisable()

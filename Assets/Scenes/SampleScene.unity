@@ -550,7 +550,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9.3125
+  orthographic size: 0
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4122,10 +4122,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2079595462821682907, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8630926479112832053}
   m_SourcePrefab: {fileID: 100100000, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+--- !u!114 &8630926479112832043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3001501976819813468, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+  m_PrefabInstance: {fileID: 8630926479112832042}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630926479112832044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2835891823f4ae0927b4d43d47b7fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8630926479112832044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2079595462821682907, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
+  m_PrefabInstance: {fileID: 8630926479112832042}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8630926479112832052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4023645464466537677, guid: 5010d8ad836e7384da439ae908732d58, type: 3}
   m_PrefabInstance: {fileID: 8630926479112832042}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8630926479112832053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630926479112832044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed06351f8c714aecbcfc03c031b30561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Context>k__BackingField:
+    <ParentController>k__BackingField: {fileID: 8630926479112832043}
+    <CollisionMask>k__BackingField:
+      serializedVersion: 2
+      m_Bits: 0
+    <WallJumpStyle>k__BackingField: {fileID: 0}
+    <Rb>k__BackingField: {fileID: 0}
+    <Collider>k__BackingField: {fileID: 0}
+  <JumpStateMachine>k__BackingField:
+    <InitialState>k__BackingField: {fileID: 0}
+    <Transitions>k__BackingField: []
+    <LogTransitions>k__BackingField: 0

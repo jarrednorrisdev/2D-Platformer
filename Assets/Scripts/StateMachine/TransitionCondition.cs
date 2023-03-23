@@ -1,37 +1,39 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Represents an individual transition condition.
-[System.Serializable]
-public abstract class TransitionCondition<T> : ScriptableObject
+namespace StateMachine
 {
-    [SerializeField]
-    [Tooltip("Negate the evaluation result of this condition.")]
-    bool negate;
-
-    [SerializeField]
-    [Tooltip("Log info on the evaluation of this condition")]
-    bool enableLogging;
-
-    // Evaluates the condition based on the context.
-    public bool Evaluate(T context)
+    [System.Serializable]
+    public abstract class TransitionCondition<T> : ScriptableObject
     {
-        bool result = EvaluateCondition(context);
-        if (enableLogging)
+        [SerializeField]
+        [Tooltip("Negate the evaluation result of this condition.")]
+        bool negate;
+
+        [SerializeField]
+        [Tooltip("Log info on the evaluation of this condition")]
+        bool enableLogging;
+
+        // Evaluates the condition based on the context.
+        public bool Evaluate(T context)
         {
-            if (negate)
+            bool result = EvaluateCondition(context);
+            if (enableLogging)
             {
-                Debug.Log($"[{name}] -condition evaluated to [{!result}]");
+                if (negate)
+                {
+                    Debug.Log($"[{name}] -condition evaluated to [{!result}]");
+                }
+                else
+                {
+                    Debug.Log($"[{name}] +condition evaluated to [{result}]");
+                }
             }
-            else
-            {
-                Debug.Log($"[{name}] +condition evaluated to [{result}]");
-            }
+
+            return negate ? !result : result;
         }
 
-        return negate ? !result : result;
+        // Implement this method in derived classes to provide the actual condition evaluation logic.
+        protected abstract bool EvaluateCondition(T context);
     }
-
-    // Implement this method in derived classes to provide the actual condition evaluation logic.
-    protected abstract bool EvaluateCondition(T context);
 }

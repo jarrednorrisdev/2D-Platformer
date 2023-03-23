@@ -1,0 +1,7 @@
+using UnityEngine;
+#NOTRIM#
+[CreateAssetMenu(fileName = "Condition_", menuName = "StateSystem/_/Conditions/_")]
+public class #SCRIPTNAME# : TransitionCondition<_Context>
+{
+    protected override bool EvaluateCondition(_Context context) { }
+}

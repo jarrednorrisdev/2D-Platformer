@@ -1,11 +1,13 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class State<T> : SerializedScriptableObject
+namespace StateMachine
 {
-    public abstract void OnEnterState(T context);
-    public abstract void OnExitState(T context);
-    public abstract void OnUpdate(T context);
-    public abstract void OnFixedUpdate(T context);
-    public abstract void OnLateUpdate(T context);
+    public abstract class State<T> : ScriptableObject
+    {
+        public abstract void OnEnterState(T context);
+        public abstract void OnExitState(T context);
+        public abstract void OnUpdate(T context);
+        public abstract void OnFixedUpdate(T context);
+        public abstract void OnLateUpdate(T context);
+    }
 }
